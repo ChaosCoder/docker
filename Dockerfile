@@ -1,6 +1,6 @@
 FROM python:3.12.2-slim-bookworm
 ENV PYVERSION 3.12
-ENV WEBLATE_VERSION 5.4.3
+ENV WEBLATE_VERSION 5.4.3.2
 ENV WEBLATE_EXTRAS all,MySQL,zxcvbn,test
 ARG TARGETARCH
 
@@ -114,7 +114,7 @@ RUN \
         -r /app/src/requirements.txt \
         "https://github.com/translate/translate/archive/master.zip" \
         "https://github.com/WeblateOrg/language-data/archive/main.zip" \
-        "https://github.com/WeblateOrg/weblate/archive/$WEBLATE_DOCKER_GIT_REVISION.zip#egg=Weblate[$WEBLATE_EXTRAS]" \
+        "https://github.com/ChaosCoder/weblate/archive/$WEBLATE_DOCKER_GIT_REVISION.zip#egg=Weblate[$WEBLATE_EXTRAS]" \
         ;; \
     * ) \
       uv pip install \
